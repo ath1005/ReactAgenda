@@ -11,6 +11,7 @@ function TaskForm(props) {
       <form>
         <input name="title" placeholder="Title" />
         <input name="date" placeholder="Date" />
+        <textarea name="comments" placeholder="Comments" />
         <button>Add</button>
       </form>
     </div>
