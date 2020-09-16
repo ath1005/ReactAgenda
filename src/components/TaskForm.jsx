@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function TaskForm(props) {
   const [task, setTask] = useState({
@@ -28,20 +31,29 @@ function TaskForm(props) {
     event.preventDefault();
   }
 
+  function handleDate(event) {
+    var date = new Date(event);
+    setTask((prevTask) => {
+      return {
+        ...prevTask,
+        date: date.toLocaleDateString()
+      };
+    });
+  }
+
   return (
-    <div>
+    <div className="task-form">
+      <DatePicker
+        className="form-picker"
+        onChange={handleDate}
+        value={task.date}
+      />
       <form>
         <input
           name="title"
           placeholder="Title"
           onChange={handleInput}
           value={task.title}
-        />
-        <input
-          name="date"
-          placeholder="Date"
-          onChange={handleInput}
-          value={task.date}
         />
         <textarea
           name="comments"

@@ -3,7 +3,7 @@
   text-align: center;
 }
 
-form {
+.task-form {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
