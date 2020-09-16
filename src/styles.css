@@ -25,11 +25,20 @@ form textarea {
 }
 
 .task {
-  background: #fff;
+  background: rgb(238, 235, 234);
   border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 2px 5px rgb(29, 28, 28);
   padding: 10px;
   width: 240px;
   margin: 16px;
   float: left;
+}
+
+.task button {
+  position: relative;
+  float: right;
+  color: white;
+  background: green;
+  box-shadow: 0 1px 3px;
+  border-radius: 50%;
 }

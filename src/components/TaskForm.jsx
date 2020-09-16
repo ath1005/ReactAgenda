@@ -22,12 +22,16 @@ function TaskForm(props) {
   }
 
   function handleAdd(event) {
-    props.onAdd(task);
-    setTask({
-      title: "",
-      date: "",
-      comments: ""
-    });
+    if (task.title !== "" && task.date !== "") {
+      props.onAdd(task);
+      setTask({
+        title: "",
+        date: "",
+        comments: ""
+      });
+    } else {
+      window.alert("Title and date are required in order to add a task!");
+    }
     event.preventDefault();
   }
 
@@ -47,6 +51,7 @@ function TaskForm(props) {
         className="form-picker"
         onChange={handleDate}
         value={task.date}
+        placeholderText="Date"
       />
       <form>
         <input

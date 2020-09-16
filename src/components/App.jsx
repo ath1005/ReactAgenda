@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Agenda</h1>
+      <h1>Assignments</h1>
       <TaskForm onAdd={addTask} />
       <div>
         <ul>
