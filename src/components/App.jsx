@@ -12,6 +12,14 @@ export default function App() {
     });
   }
 
+  function deleteTask(id) {
+    setTasks((prevTasks) => {
+      return prevTasks.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   return (
     <div className="App">
       <h1>Agenda</h1>
@@ -25,6 +33,7 @@ export default function App() {
               title={task.title}
               date={task.date}
               comments={task.comments}
+              onDelete={deleteTask}
             />
           ))}
         </ul>
