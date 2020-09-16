@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
+import Task from "./Task";
 import "/src/styles.css";
 
 export default function App() {
@@ -15,6 +16,19 @@ export default function App() {
     <div className="App">
       <h1>Agenda</h1>
       <TaskForm onAdd={addTask} />
+      <div>
+        <ul>
+          {tasks.map((task, index) => (
+            <Task
+              key={index}
+              id={index}
+              title={task.title}
+              date={task.date}
+              comments={task.comments}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
