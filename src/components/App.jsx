@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
+import Footer from "./Footer";
 import "/src/styles.css";
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
           ))}
         </ul>
       </div>
+      <Footer />
     </div>
   );
 }
